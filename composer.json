@@ -9,5 +9,13 @@
         }
     ],
     "minimum-stability": "stable",
-    "require": {}
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/support": ">=5.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "HiroKws\\Prodev": "src/"
+        }
+    }
 }
