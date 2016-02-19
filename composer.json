@@ -1,0 +1,13 @@
+{
+    "name": "hirokws/prodev",
+    "description": "Set dev/no-dev mode for composer from Laravel's dot-env file.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Hirohisa Kawase",
+            "email": "hirokws@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {}
+}
