@@ -15,7 +15,7 @@
     },
     "autoload": {
         "psr-4": {
-            "HiroKws\\Prodev": "src/"
+            "HiroKws\\Prodev\\": "src/"
         }
     }
 }
