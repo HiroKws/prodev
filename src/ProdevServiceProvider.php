@@ -3,6 +3,7 @@
 namespace HiroKws\Prodev;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Foundation\AliasLoader;
 
 /**
  * Laravel service provider to handle additional providers/aliases.
@@ -32,13 +33,16 @@ class ProdevServiceProvider extends ServiceProvider
         // Add extra aliases.
         $extraAliases = $this->app->config->get('app.dev-aliases');
 
+        // Applicaton's alias method don't work. So use alias loader.
+        $aliasLoader = AliasLoader::getInstance();
+
         if (!empty($extraAliases)) {
             foreach ($extraAliases as $alias => $className) {
                 if ($this->app->environment() === 'local') {
-                    $this->app->alias($alias, $className);
+                    $aliasLoader->alias($alias,$className );
                 } else {
                     // Register stab class when it is not in local environment.
-                    $this->app->alias($alias, MethodCallHandler::class);
+                    $aliasLoader->alias($alias, MethodCallHandler::class);
                 }
             }
         }

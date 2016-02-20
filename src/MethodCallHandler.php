@@ -9,6 +9,12 @@ namespace HiroKws\Prodev;
  */
 class MethodCallHandler
 {
+    private static $instance = null;
+
+    public function __construct()
+    {
+        self::$instance = $this;
+    }
     /**
      * Handle called method by PHP magic method.
      *
@@ -17,6 +23,21 @@ class MethodCallHandler
      */
     public function __call($name, $arguments)
     {
-        // Do nothing!!
+        return $this;
+    }
+
+    /**
+     * Handle static called method by PHP magic method.
+     *
+     * @param type $name
+     * @param type $arguments
+     */
+    public static function __callStatic($name, $arguments)
+    {
+        if (is_null(self::$instance)) {
+            self::$instance = new MethodCallHandler();
+        }
+
+        return self::$instance;
     }
 }

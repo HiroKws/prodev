@@ -3,7 +3,7 @@
 Add extra Laravel service providers and class aliases at 'local' environment.
 This Component name came from 'prod(uctin)-dev(elopment)'.
 
-__CAUTION, now in development__
+__CAUTION, this is bata version now.__
 
 ## Installation
 
@@ -57,4 +57,10 @@ If needed, register additnal class aliases. For example :
 At 'local' environment, aliases defined in 'dev-aliases' array, are effective.
 In other environments, defined aliases will asign to dummy stab class to do nothing when any method called.
 
-This is simple package. See also check codes.
+So following code will log a 'test' string onto Debugbar when local environment, otherwise do nothing.
+
+~~~
+    \Debugbar::info('test');
+~~~
+
+This is simple package. See also check codes. ;D Keep it simple simple things. :D
