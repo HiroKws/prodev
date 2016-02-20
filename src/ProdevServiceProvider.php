@@ -18,7 +18,7 @@ use Illuminate\Support\ServiceProvider;
  */
 class ProdevServiceProvider extends ServiceProvider
 {
-    public function register()
+    public function boot()
     {
         // Add extra service provider when 'local' environment.
         $extraProviders = $this->app->config->get('app.dev-providers');
@@ -42,5 +42,9 @@ class ProdevServiceProvider extends ServiceProvider
                 }
             }
         }
+    }
+
+    public function register()
+    {
     }
 }
