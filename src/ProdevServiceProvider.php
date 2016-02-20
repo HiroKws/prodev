@@ -35,7 +35,7 @@ class ProdevServiceProvider extends ServiceProvider
         if (!empty($extraAliases)) {
             foreach ($extraAliases as $alias => $className) {
                 if ($this->app->environment() == 'local') {
-                    $$this->app->alias($alias, $className);
+                    $this->app->alias($alias, $className);
                 } else {
                     // Register stab class when it is not in local environment.
                     $this->app->alias($alias, MethodCallHandler::class);
