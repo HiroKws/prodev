@@ -34,7 +34,6 @@ class ProdevServiceProvider extends ServiceProvider
 
         if (!empty($extraAliases)) {
             foreach ($extraAliases as $alias => $className) {
-                dd($className);
                 if ($this->app->environment() === 'local') {
                     $this->app->alias($alias, $className);
                 } else {
