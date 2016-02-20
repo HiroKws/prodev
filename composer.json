@@ -1,6 +1,6 @@
 {
     "name": "hirokws/prodev",
-    "description": "",
+    "description": "Add extra Laravel service providers and class alias with `local` environment.",
     "license": "MIT",
     "authors": [
         {
