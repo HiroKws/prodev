@@ -23,7 +23,7 @@ class ProdevServiceProvider extends ServiceProvider
         // Add extra service provider when 'local' environment.
         $extraProviders = $this->app->config->get('app.dev-providers');
 
-        if ($this->app->environment() == 'local' && !empty($extraProviders)) {
+        if ($this->app->environment() === 'local' && !empty($extraProviders)) {
             foreach ($extraProviders as $providerName) {
                 $this->app->register($providerName);
             }
@@ -34,7 +34,8 @@ class ProdevServiceProvider extends ServiceProvider
 
         if (!empty($extraAliases)) {
             foreach ($extraAliases as $alias => $className) {
-                if ($this->app->environment() == 'local') {
+                dd($className);
+                if ($this->app->environment() === 'local') {
                     $this->app->alias($alias, $className);
                 } else {
                     // Register stab class when it is not in local environment.
