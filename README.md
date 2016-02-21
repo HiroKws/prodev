@@ -10,7 +10,7 @@ __CAUTION, this is bata version now.__
 On your terminal, type following command.
 
 ~~~
-composer require hirokws/prodec
+composer require hirokws/prodev
 ~~~
 
 Or, register in composer.json file.
